@@ -1,69 +1,83 @@
 import numpy as np
 
-from models import CNN_params
+from utils.model_calculations import (
+    CNN_calculate,
+    GlobalAvgPool_calculate,
+    Linear_calculate,
+    MaxPool_calculate,
+    ReLU_calculate,
+)
 
-# FP32
-Q_bytes = 4
-
-_cnn_S_out_memo = {}
-# CNN
-
-# memorize? hardcode?
-def _cnn_S_out(image_size: np.ndarray, cnn: CNN_params) -> np.ndarray:
-    return np.ceil((image_size + 2 * cnn.padding - cnn.kernel) / cnn.stride)
-
-
-def _cnn_flops(image_size: np.ndarray, batch: np.ndarray, cnn: CNN_params) -> np.ndarray:
-    return 2 * batch * _cnn_S_out(image_size, cnn) ** 2 * cnn.kernel ** 2 * cnn.chan_in * cnn.chan_out
-
-
-def _cnn_memory(image_size: np.ndarray, batch: np.ndarray, cnn: CNN_params) -> np.ndarray:
-    return (
-            cnn.kernel ** 2 * cnn.chan_in * cnn.chan_out +
-            image_size ** 2 *  cnn.chan_in * batch +
-            _cnn_S_out(image_size, cnn) * cnn.chan_out * batch
-    ) * Q_bytes
-
-
-# MaxPool
-def _maxpool_flops(image_size: np.ndarray, batch: np.ndarray) -> np.ndarray:
-    pass
-
-
-def _maxpool_memory(image_size: np.ndarray, batch: np.ndarray) -> np.ndarray:
-    pass
+LAYERS = [
+    CNN_calculate(kernel=7, stride=2, padding=7 // 2, chan_in=3, chan_out=32),
+    ReLU_calculate(channels=32),
+    MaxPool_calculate(kernel=3, stride=2, padding=1, channels=32),
+    CNN_calculate(kernel=5, stride=1, padding=5 // 2, chan_in=32, chan_out=64),
+    ReLU_calculate(channels=64),
+    CNN_calculate(kernel=3, stride=2, padding=3 // 2, chan_in=64, chan_out=128),
+    ReLU_calculate(channels=128),
+    CNN_calculate(kernel=1, stride=1, padding=1 // 2, chan_in=128, chan_out=256),
+    ReLU_calculate(channels=256),
+    CNN_calculate(kernel=3, stride=2, padding=3 // 2, chan_in=256, chan_out=256),
+    ReLU_calculate(channels=256),
+    CNN_calculate(kernel=1, stride=1, padding=1 // 2, chan_in=256, chan_out=512),
+    ReLU_calculate(channels=512),
+    GlobalAvgPool_calculate(channels=512),
+    Linear_calculate(in_features=512, out_features=256),
+    ReLU_calculate(channels=256),
+    Linear_calculate(in_features=256, out_features=100),
+]
 
 
-# GlobalAvgPool
-def _global_flops(image_size: np.ndarray, batch: np.ndarray) -> np.ndarray:
-    pass
+def _forward_sizes(image_size: np.ndarray):
+    size = np.asarray(image_size)
+    for layer in LAYERS:
+        yield layer, size
+        size = layer.output_size(size)  # catch and update at the end of layer iter
 
 
-def _global_memory(image_size: np.ndarray, batch: np.ndarray) -> np.ndarray:
-    pass
-
-
-# Linear
-def _linear_flops(image_size: np.ndarray, batch: np.ndarray) -> np.ndarray:
-    pass
-
-
-def _linear_memory(image_size: np.ndarray, batch: np.ndarray) -> np.ndarray:
-    pass
-
-
-# overall
 def flops(image_size: np.ndarray, batch: np.ndarray) -> np.ndarray:
-    pass
+    image_size = np.asarray(image_size)
+    batch = np.asarray(batch)
+    total = 0.0
+    for layer, size in _forward_sizes(image_size):
+        total += layer.flops(size, batch)
+    return total
+
+
+def bytes_moved(image_size: np.ndarray, batch: np.ndarray) -> np.ndarray:
+    image_size = np.asarray(image_size)
+    batch = np.asarray(batch)
+    total = 0.0
+    for layer, size in _forward_sizes(image_size):
+        total = total + layer.bytes_moved(size, batch)
+    return total
 
 
 def memory(image_size: np.ndarray, batch: np.ndarray) -> np.ndarray:  # bytes
-    pass
+    image_size = np.asarray(image_size)
+    batch = np.asarray(batch)
+    weight_bytes = sum(layer.weight_bytes() for layer in LAYERS)
+    activation_peaks = [
+        layer.peak_activation_bytes(size, batch) for layer, size in _forward_sizes(image_size)
+    ]
+    return weight_bytes + np.maximum.reduce(activation_peaks)
 
 
 def latency(image_size: np.ndarray, batch: np.ndarray, theta) -> np.ndarray:  # seconds
-    pass
+    f = flops(image_size, batch)
+    m = bytes_moved(image_size, batch)
+    compute_time = f / theta["flops_rate"]
+    memory_time = m / theta["bandwidth"]
+    return theta["t_startup"] + np.maximum(compute_time, memory_time)
 
 
 def energy(image_size: np.ndarray, batch: np.ndarray, theta_energy) -> np.ndarray:  # joules
-    pass
+    f = flops(image_size, batch)
+    m = bytes_moved(image_size, batch)
+    t = latency(image_size, batch, theta_energy["latency"])
+    return (
+            theta_energy["p_idle"] * t
+            + theta_energy["e_flop"] * f
+            + theta_energy["e_byte"] * m
+    )
