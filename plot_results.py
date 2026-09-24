@@ -21,7 +21,7 @@ METRICS = [
     ("energy", "Energy", "J", eq.energy),
 ]
 
-VRAM_CAPACITY_BYTES = 15 * 2**30  # the Colab T4 used for measurement
+VRAM_CAPACITY_BYTES = 15 * 2**30  # the colab T4 used for measurement, 15gb
 
 
 def load_measurements() -> list[dict]:
@@ -120,27 +120,6 @@ def plot_parity(rows, theta):
     plt.close(fig)
 
 
-def print_error_summary(rows, theta):
-    for metric, name, _unit, fn in METRICS:
-        usable = [r for r in rows if r[metric] is not None]
-        s = np.array([r["S"] for r in usable])
-        b = np.array([r["B"] for r in usable])
-        measured = np.array([r[metric] for r in usable])
-        is_validation = np.array([r["is_validation"] for r in usable])
-        predicted = predict(metric, fn, s, b, theta)
-        rel_err = np.abs(predicted - measured) / measured
-        for mask, split in ((~is_validation, "calibration"), (is_validation, "validation")):
-            if mask.any():
-                print(f"{name:<10} {split:<12} median |rel err| = {np.median(rel_err[mask]) * 100:6.2f}%  (n={mask.sum()})")
-
-    oom_rows = [r for r in rows if r["memory"] is None]
-    if oom_rows:
-        print(f"\nOOM configs ({len(oom_rows)}) -- what memory() predicted for them:")
-        for r in oom_rows:
-            predicted_gib = eq.memory(r["S"], r["B"]) / 2**30
-            print(f"  S={r['S']:.0f} B={r['B']:.0f}: predicted memory = {predicted_gib:.2f} GiB")
-
-
 def main():
     FIGURES_DIR.mkdir(parents=True, exist_ok=True)
     rows = load_measurements()
@@ -149,8 +128,6 @@ def main():
     plot_vs(rows, theta, x_key="S", fixed_key="B", fixed_values=[1, 8, 64, 256, 512], filename="vs_image_size.png")
     plot_vs(rows, theta, x_key="B", fixed_key="S", fixed_values=[32, 128, 256, 512, 1024], filename="vs_batch.png")
     plot_parity(rows, theta)
-    print_error_summary(rows, theta)
-    print(f"wrote figures to {FIGURES_DIR}")
 
 
 if __name__ == "__main__":

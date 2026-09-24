@@ -50,7 +50,7 @@ def bytes_moved(image_size: np.ndarray, batch: np.ndarray) -> np.ndarray:
     batch = np.asarray(batch)
     total = 0.0
     for layer, size in _forward_sizes(image_size):
-        total = total + layer.bytes_moved(size, batch)
+        total += layer.bytes_moved(size, batch)
     return total
 
 
