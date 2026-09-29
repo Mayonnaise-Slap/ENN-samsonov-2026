@@ -1,1 +1,16 @@
-[HW1](https://github.com/Mayonnaise-Slap/ENN-samsonov-2026/tree/hw1)
+# Самсонов А.А. 
+
+M4152, 368758
+
+# HW2
+
+Работа заключалась в прочтении статьи и воспроизведении ее результатов. Результаты 
+представлены в следующих файлах:
+
+- [презентация с объяснением статьи]()
+- [отчет о воспроизведении](report.md)
+- [код воспроизвведения]()
+
+Для разбора я выбрал статью "Super-Convergence: Very Fast Training of Neural
+Networks Using Large Learning Rates". 
+ 
