@@ -8,5 +8,6 @@ dependencies = [
     "matplotlib>=3.11.2",
     "numpy>=2.5.3",
     "pandas>=3.0.6",
-    "torchvision>=0.29.0",
+    "scipy>=1.18.1",
+    "scipy-stubs>=1.18.1.1",
 ]
