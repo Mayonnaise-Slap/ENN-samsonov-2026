@@ -10,7 +10,3 @@ M4152, 368758
 - [презентация с объяснением статьи](ENN-super-convergence.pdf)
 - [отчет о воспроизведении](report.md)
 - [код воспроизвведения]()
-
-Для разбора я выбрал статью "Super-Convergence: Very Fast Training of Neural
-Networks Using Large Learning Rates". 
- 
