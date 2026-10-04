@@ -1,0 +1,10 @@
+{
+ "resnet56_range_test": {
+  "run": "range_test/modelresnet_depth56_n_train50000_schedrange_lr_hi3.0_wd0.0001_bs512_iters8000_seed42",
+  "peak_acc": 0.7814,
+  "lr_at_peak": 0.7499437429678741,
+  "lr_max": 2.9999999999999956,
+  "acc_at_lr_hi": 0.7346666666666667,
+  "c1": true
+ }
+}
