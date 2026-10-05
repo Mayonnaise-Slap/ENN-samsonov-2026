@@ -109,11 +109,45 @@ c1, c2, c9, c11. Ниже описаны постановки и результ�
 В статье авторы демонстрируют, их экперименты демонстрируют корректное поведение 
 модели во время LR range test даже при значениях на порядок больше стандартных. 
 
-![figures/paper_lr_rangetest.png](figures/paper_lr_rangetest.png)
+![figures/paper_lr_rangetest.png](figures/paper/paper_lr_rangetest.png)
 
 Как и указано выше, LR нельзя наращивать слишком быстро. После warmup (300 итераций) 
 был запущен sweep по значениям LR. В любом случае, левый край графика демонстрирует 
 процесс обучения модели, а не непосредственный эффект заданного LR. Однако тенденции 
-возможно сравнить. Далее представлен график. 
+возможно сравнить. Далее представлен график range теста (3 проверки на разных seed). 
 
-![c1_resnet56_range_test_accuracy.png](figures/c1_resnet56_range_test_accuracy.png)
+![range_test_accuracy.png](figures/exp1_range_test/range_test_accuracy.png)
+
+Как можно видеть, наблюдения авторов продублированы. Хоть точность и выходит на плато, 
+но модель не демонстрирует никакие аномалии при росте LR далеко за пределы стандартных 
+0.1. 
+
+### Эксперимент 2: применение без-гессевого оценщика для LR
+
+В главе 4 авторы статьи демонстрируют свое уравнение для оценки оптимального LR без 
+подсчета полной матрицы Гессе:
+
+$$$
+\epsilon^*=\epsilon\frac{\theta_{i+1}-\theta_i}{2\theta_{i+1}-\theta_i-\theta_{i+2}}
+$$$
+
+Где $\theta_i$ - градиент модели на i'й итерации, $\epsilon$ - фактический LR, 
+$\epsilon^*$ - прогнозируемый оптимальный LR.  
+
+Авторы предоставляют следующие графики, которые указывают что оптимальный LR долгое 
+время остается значительно выше используемого, находится в диапазоне 3-6. 
+
+![paper_hessian_free.png](figures/paper/paper_hessian_free.png)
+
+Я запустил аналогичный эксперимент и получил следующие результаты:
+
+![estimate_1cycle.png](figures/exp2_lr_estimator/estimate_1cycle.png)
+![estimate_pc.png](figures/exp2_lr_estimator/estimate_pc.png)
+
+Также прикладываю те же графики, но с линейным y
+
+![estimate_1cycle_linear.png](figures/exp2_lr_estimator/estimate_1cycle_linear.png)
+![estimate_pc_linear.png](figures/exp2_lr_estimator/estimate_pc_linear.png)
+
+Заметно, как предсказанный LR близко следует за фактическим, демонстрируя результат ~~ 
+эквивалентный 2x LR. 

@@ -1,0 +1,2 @@
+a,b,n_a,n_b,mean_a,mean_b,diff
+"1cycle, 12 epochs","inv, 85 epochs",1,1,0.9906,0.99,0.0006000000000000449

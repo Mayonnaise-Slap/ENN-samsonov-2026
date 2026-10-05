@@ -1,0 +1,4 @@
+run,seed,flags
+"1cycle 0.1-3, 3k",42,
+"PC-LR 0.35, 3k",42,collapsed@200 collapsed@300 collapsed@400 collapsed@500 collapsed@600
+"PC-LR 0.35, 24k",42,
