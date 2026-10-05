@@ -219,23 +219,29 @@ def final_table(groups):
     return pd.DataFrame(rows)
 
 
-def final_accuracy_figure(groups, paper, title, directory, name):
+def final_accuracy_bars(groups, paper, title, directory, name):
+    labels = list(groups)
+    x = np.arange(len(labels))
+    width = 0.38
+    ours = [describe(100 * np.array([r["final"]["test_acc"] for r in groups[label]])) for label in labels]
     fig, ax = plt.subplots(figsize=(7, 4.5))
-    for i, (label, group) in enumerate(groups.items()):
-        acc = 100 * np.array([r["final"]["test_acc"] for r in group])
-        d = describe(acc)
-        ax.scatter(np.full(len(acc), i - 0.1), acc, color="gray", s=18, label="seeds" if i == 0 else None)
-        ax.errorbar(i, d["mean"], yerr=0 if np.isnan(d["std"]) else d["std"], fmt="o", capsize=5,
-                    color="C0", label="ours, mean ± std" if i == 0 else None)
-        if label in paper:
-            mean, std = paper[label]
-            ax.errorbar(i + 0.15, mean, yerr=std, fmt="s", color="black", capsize=5,
-                        label="paper" if not any(l in paper for l in list(groups)[:i]) else None)
-    ax.set_xticks(range(len(groups)), list(groups))
-    ax.set_xlim(-0.5, len(groups) - 0.5)
+    ax.bar(x - width / 2, [d["mean"] for d in ours], width, yerr=[0 if np.isnan(d["std"]) else d["std"] for d in ours],
+           capsize=5, label="ours, mean ± std")
+    for i, label in enumerate(labels):
+        acc = 100 * np.array([r["final"]["test_acc"] for r in groups[label]])
+        ax.scatter(np.full(len(acc), x[i] - width / 2), acc, color="black", s=14, zorder=3,
+                   label="ours, seeds" if i == 0 else None)
+    paper_x = [x[i] + width / 2 for i, label in enumerate(labels) if label in paper]
+    paper_mean = [paper[label][0] for label in labels if label in paper]
+    paper_std = [paper[label][1] or 0 for label in labels if label in paper]
+    ax.bar(paper_x, paper_mean, width, yerr=paper_std, capsize=5, color="gray", label="paper, mean ± std")
+    values = [d["mean"] for d in ours] + paper_mean
+    span = max(values) - min(values)
+    ax.set_ylim(min(values) - max(0.3, 0.25 * span), max(values) + max(0.15, 0.05 * span))
+    ax.set_xticks(x, labels)
     ax.set_ylabel("Final test accuracy, %")
     ax.set_title(title)
-    ax.legend()
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.1), ncol=3, fontsize=8)
     save(fig, directory, name)
 
 
@@ -471,7 +477,22 @@ def exp3(runs):
     ax.legend()
     save(fig, EXP3, "c11_test_error.png")
 
-    final_accuracy_figure(groups, PAPER["c11"], f"LeNet, MNIST: final test accuracy ({note})", EXP3, "c11_final_accuracy.png")
+    for ylim, name in ((None, "c11_accuracy.png"), ((98.0, 100.0), "c11_accuracy_zoom.png")):
+        fig, ax = plt.subplots(figsize=(8, 4.5))
+        for i, (label, group) in enumerate(groups.items()):
+            it, train, train_std = stack_history(group, "train_acc")
+            _, test, test_std = stack_history(group, "test_acc")
+            band(ax, it / its_per_epoch, 100 * train, 100 * train_std, f"{label}, train (epoch window)", color=f"C{i}")
+            band(ax, it / its_per_epoch, 100 * test, 100 * test_std, f"{label}, test", color=f"C{i}", ls="--")
+        if ylim:
+            ax.set_ylim(*ylim)
+        ax.set_xlabel("Epoch")
+        ax.set_ylabel("Accuracy, %")
+        ax.set_title(f"LeNet, MNIST: train and test accuracy ({note})" + (", zoomed" if ylim else ""))
+        ax.legend(fontsize=8)
+        save(fig, EXP3, name)
+
+    final_accuracy_bars(groups, PAPER["c11"], f"LeNet, MNIST: final test accuracy ({note})", EXP3, "c11_final_accuracy.png")
     save_table(final_table(groups), EXP3, "c11_final_summary.csv")
     if len(groups) == 2:
         final = {label: [r["final"]["test_acc"] for r in group] for label, group in groups.items()}
@@ -538,8 +559,8 @@ def exp4(runs):
     ax.legend()
     save(fig, EXP4, "generalization_gap.png")
 
-    final_accuracy_figure(groups, PAPER["c2"], f"ResNet-56, CIFAR-10: final test accuracy ({note})", EXP4,
-                          "final_accuracy.png")
+    final_accuracy_bars(groups, PAPER["c2"], f"ResNet-56, CIFAR-10: final test accuracy ({note})", EXP4,
+                        "final_accuracy.png")
     save_table(final_table(groups), EXP4, "final_summary.csv")
     final = {label: [r["final"]["test_acc"] for r in group] for label, group in groups.items()}
     pairs = [("1cycle 0.1-3, 3k", "PC-LR 0.35, 24k"), ("1cycle 0.1-3, 3k", "PC-LR 0.35, 3k")]
