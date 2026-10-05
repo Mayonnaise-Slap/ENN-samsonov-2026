@@ -1,0 +1,112 @@
+{
+ "name": "range_test/modellenet_schedrange_lr_hi4.0_wd0.0005_bs512_iters4000_seed35076126",
+ "cfg": {
+  "exp": "range_test",
+  "model": "lenet",
+  "sched": "range",
+  "lr_hi": 4.0,
+  "wd": 0.0005,
+  "bs": 512,
+  "iters": 4000,
+  "seed": 35076126,
+  "eval_every": 100,
+  "ckpt_every": 1000,
+  "n_classes": 10
+ },
+ "env": {
+  "python": "3.13.15",
+  "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+  "torch": "2.11.0+cu130",
+  "torchvision": "0.26.0+cu130",
+  "cuda": "13.0",
+  "cudnn": 92700,
+  "device": "Tesla T4"
+ },
+ "status": "diverged",
+ "flags": [
+  "diverged@600"
+ ],
+ "history": [
+  {
+   "it": 100,
+   "lr": 0.09941485371342836,
+   "momentum": 0.9,
+   "train_loss": 0.5730749893188477,
+   "train_acc": 0.82736328125,
+   "nonfinite": 0,
+   "test_loss": 0.08938490600585937,
+   "test_acc": 0.9715,
+   "t_train": 0.5059511939998629,
+   "t_eval": 0.051069481000013184
+  },
+  {
+   "it": 200,
+   "lr": 0.19942985746436614,
+   "momentum": 0.9,
+   "train_loss": 0.078502836227417,
+   "train_acc": 0.9753125,
+   "nonfinite": 0,
+   "test_loss": 0.06644497680664062,
+   "test_acc": 0.9789,
+   "t_train": 1.0564705790002336,
+   "t_eval": 0.10161906400026055
+  },
+  {
+   "it": 300,
+   "lr": 0.29944486121530356,
+   "momentum": 0.9,
+   "train_loss": 0.06454618930816651,
+   "train_acc": 0.98046875,
+   "nonfinite": 0,
+   "test_loss": 0.060838262939453124,
+   "test_acc": 0.9798,
+   "t_train": 1.4835222630008502,
+   "t_eval": 0.15213559800031362
+  },
+  {
+   "it": 400,
+   "lr": 0.3994598649662418,
+   "momentum": 0.9,
+   "train_loss": 0.05500733375549317,
+   "train_acc": 0.98212890625,
+   "nonfinite": 0,
+   "test_loss": 0.051847625732421875,
+   "test_acc": 0.9847,
+   "t_train": 1.925640089000808,
+   "t_eval": 0.20083630299996003
+  },
+  {
+   "it": 500,
+   "lr": 0.4994748687171796,
+   "momentum": 0.9,
+   "train_loss": 0.06720811843872071,
+   "train_acc": 0.97966796875,
+   "nonfinite": 0,
+   "test_loss": 0.1355671142578125,
+   "test_acc": 0.9614,
+   "t_train": 2.3576603090023127,
+   "t_eval": 0.2505232249986875
+  },
+  {
+   "it": 600,
+   "lr": 0.5994898724681178,
+   "momentum": 0.9,
+   "train_loss": 64.91922644412878,
+   "train_acc": 0.32361328125,
+   "nonfinite": 67,
+   "test_loss": 397832355.84,
+   "test_acc": 0.1032,
+   "t_train": 2.7673314540024876,
+   "t_eval": 0.30144542399830243
+  }
+ ],
+ "final": {
+  "test_loss": 397832355.84,
+  "test_acc": 0.1032,
+  "best_eval_acc": 0.9847,
+  "mean_last3_eval_acc": 0.6831,
+  "t_train": 2.7673314540024876,
+  "t_eval": 0.30144542399830243
+ },
+ "hooks": []
+}
