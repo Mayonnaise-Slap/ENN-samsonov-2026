@@ -235,9 +235,9 @@ def final_accuracy_bars(groups, paper, title, directory, name):
     paper_mean = [paper[label][0] for label in labels if label in paper]
     paper_std = [paper[label][1] or 0 for label in labels if label in paper]
     ax.bar(paper_x, paper_mean, width, yerr=paper_std, capsize=5, color="gray", label="paper, mean ± std")
-    values = [d["mean"] for d in ours] + paper_mean
+    values = [d["mean"] for d in ours] + paper_mean + [100 * r["final"]["test_acc"] for g in groups.values() for r in g]
     span = max(values) - min(values)
-    ax.set_ylim(min(values) - max(0.3, 0.25 * span), max(values) + max(0.15, 0.05 * span))
+    ax.set_ylim(max(0.0, min(values) - max(0.3, 0.25 * span)), max(values) + max(0.15, 0.05 * span))
     ax.set_xticks(x, labels)
     ax.set_ylabel("Final test accuracy, %")
     ax.set_title(title)
