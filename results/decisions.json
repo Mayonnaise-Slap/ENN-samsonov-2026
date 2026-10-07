@@ -95,20 +95,30 @@
  },
  "c2": {
   "seeds": [
-   42
+   42,
+   66,
+   35076126
   ],
   "lr_max": 3.0,
   "1cycle@3k": [
-   0.9196
+   0.9196,
+   0.9169,
+   0.9141
   ],
   "PC-LR@3k": [
-   0.7804
+   0.7804,
+   0.2195,
+   0.1006
   ],
   "PC-LR@24k": [
-   0.9186
+   0.9186,
+   0.9214,
+   0.9211
   ],
   "flags": {
    "1cycle@3k": [
+    [],
+    [],
     []
    ],
    "PC-LR@3k": [
@@ -118,13 +128,66 @@
      "collapsed@400",
      "collapsed@500",
      "collapsed@600"
+    ],
+    [
+     "collapsed@200",
+     "collapsed@300",
+     "collapsed@400",
+     "collapsed@500",
+     "collapsed@600",
+     "collapsed@700",
+     "collapsed@800",
+     "collapsed@900",
+     "collapsed@1000",
+     "collapsed@1100",
+     "collapsed@1200",
+     "collapsed@1300"
+    ],
+    [
+     "collapsed@200",
+     "collapsed@300",
+     "collapsed@400",
+     "collapsed@500",
+     "collapsed@600",
+     "collapsed@700",
+     "collapsed@800",
+     "collapsed@900",
+     "collapsed@1000",
+     "collapsed@1100",
+     "collapsed@1200",
+     "collapsed@1300",
+     "collapsed@1400",
+     "collapsed@1500",
+     "collapsed@1600",
+     "collapsed@1700",
+     "collapsed@1800",
+     "collapsed@1900",
+     "collapsed@2000",
+     "collapsed@2100",
+     "collapsed@2200",
+     "collapsed@2300",
+     "collapsed@2400",
+     "collapsed@2500",
+     "collapsed@2600",
+     "collapsed@2700",
+     "collapsed@2800",
+     "collapsed@2900",
+     "collapsed@3000"
     ]
    ],
    "PC-LR@24k": [
-    []
+    [],
+    [
+     "collapsed@1000"
+    ],
+    [
+     "collapsed@1000",
+     "collapsed@1500",
+     "collapsed@2000"
+    ]
    ]
   },
-  "c2": true
+  "c2": false
  },
  "lr_estimator_v2": {
   "seeds": [

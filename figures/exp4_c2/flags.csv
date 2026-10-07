@@ -5,5 +5,6 @@ run,seed,flags
 "PC-LR 0.35, 3k",35076126,collapsed@200 collapsed@300 collapsed@400 collapsed@500 collapsed@600 collapsed@700 collapsed@800 collapsed@900 collapsed@1000 collapsed@1100 collapsed@1200 collapsed@1300 collapsed@1400 collapsed@1500 collapsed@1600 collapsed@1700 collapsed@1800 collapsed@1900 collapsed@2000 collapsed@2100 collapsed@2200 collapsed@2300 collapsed@2400 collapsed@2500 collapsed@2600 collapsed@2700 collapsed@2800 collapsed@2900 collapsed@3000
 "PC-LR 0.35, 3k",42,collapsed@200 collapsed@300 collapsed@400 collapsed@500 collapsed@600
 "PC-LR 0.35, 3k",66,collapsed@200 collapsed@300 collapsed@400 collapsed@500 collapsed@600 collapsed@700 collapsed@800 collapsed@900 collapsed@1000 collapsed@1100 collapsed@1200 collapsed@1300
+"PC-LR 0.35, 24k",35076126,collapsed@1000 collapsed@1500 collapsed@2000
 "PC-LR 0.35, 24k",42,
 "PC-LR 0.35, 24k",66,collapsed@1000
