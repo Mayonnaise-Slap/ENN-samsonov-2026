@@ -303,7 +303,6 @@ def train(name, cfg, model, opt, sched, train_loader, eval_loader, final_loader,
         losses[:state["it"]] = ck["losses"]
         print(f"[{name}] resumed at it {state['it']}")
 
-    # Window stats stay on the GPU until the next eval: loss sum, finite steps, correct.
     win = torch.zeros(3, device=device)
     status = "complete"
     model.train()
@@ -329,12 +328,12 @@ def train(name, cfg, model, opt, sched, train_loader, eval_loader, final_loader,
         win += torch.stack([loss.nan_to_num(0.0, 0.0, 0.0), loss.isfinite().float(),
                            (logits.argmax(1) == y).sum().float()])
         for h in hooks:
-            h(it, model, lr, scaler.get_scale() >= scale_before)  # the scale only drops on a skipped step
+            h(it, model, lr, scaler.get_scale() >= scale_before)
 
         if (it + 1) % cfg["eval_every"] and it + 1 < total:
             continue
 
-        # Eval point.
+        # eval
         torch.cuda.synchronize()
         t1 = time.perf_counter()
         state["t_train"] += t1 - t0
@@ -353,10 +352,10 @@ def train(name, cfg, model, opt, sched, train_loader, eval_loader, final_loader,
         state["history"].append(row)
         print(f"[{name}] " + " ".join(f"{k} {v:.4g}" for k, v in row.items()))
 
-        # Collapsed: constant predictions (loss ≈ ln C, chance accuracy). Recovery has been seen, so continue.
+        # collapse
         if abs(row["train_loss"] - math.log(cfg["n_classes"])) < 0.05 and row["train_acc"] < 1.5 / cfg["n_classes"]:
             state["flags"].append(f"collapsed@{it + 1}")
-        # Diverged: non-finite weights or BN buffers, or most steps of the window non-finite. Stop.
+        # divirged
         weights = torch.cat([t.flatten() for t in model.state_dict().values() if t.is_floating_point()])
         if not weights.isfinite().all() or row["nonfinite"] > steps / 2:
             status = "diverged"
