@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e6a1c749-84d0-4f46-8cd2-9ef0d6e03471" name="Changes" comment="ref: last export of colab + shareble link">
+      <change afterPath="$PROJECT_DIR$/a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/t3.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="markdown" />
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Mayonnaise-Slap&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:Mayonnaise-Slap/ENN-samsonov-2026.git&quot;,
+    &quot;accountId&quot;: &quot;64996183-02b0-41cb-b3b8-a8aebc5f5544&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3Je8yaOWOodPvEihDaA8UbSXeG2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.analyze.executor": "Run",
+    "Python.calibrate.executor": "Run",
+    "Python.cnn_ai_example.executor": "Run",
+    "Python.conv_ai_check.executor": "Run",
+    "Python.plot_results.executor": "Run",
+    "Python.residual_analysis.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "hw3",
+    "last_opened_file_path": "/Users/mayonnaiseslap/ENN-samsonov-2026",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.intellij.jupyter.py.connections.configurable.JupyterServersConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/results" />
+      <recent name="$PROJECT_DIR$/tmp" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/figures/paper" />
+      <recent name="$PROJECT_DIR$/results/range_test" />
+      <recent name="$PROJECT_DIR$/figures" />
+      <recent name="$PROJECT_DIR$/tmp" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.analyze">
+    <configuration name="analyze" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ENN-samsonov-2026" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analyze.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="cnn_ai_example" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ENN-samsonov-2026" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/cnn_ai_example.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="conv_ai_check" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ENN-samsonov-2026" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tmp" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tmp/conv_ai_check.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="plot_results" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ENN-samsonov-2026" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plot_results.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="residual_analysis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ENN-samsonov-2026" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/residual_analysis.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.analyze" />
+        <item itemvalue="Python.cnn_ai_example" />
+        <item itemvalue="Python.conv_ai_check" />
+        <item itemvalue="Python.residual_analysis" />
+        <item itemvalue="Python.plot_results" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-c59985aa861c-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.24374.152" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e6a1c749-84d0-4f46-8cd2-9ef0d6e03471" name="Changes" comment="" />
+      <created>1790010429639</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1790010429639</updated>
+      <workItem from="1790010430976" duration="6898000" />
+      <workItem from="1790180220960" duration="13131000" />
+      <workItem from="1790271736114" duration="12691000" />
+      <workItem from="1790587579094" duration="47000" />
+      <workItem from="1790587660699" duration="6211000" />
+      <workItem from="1790666051196" duration="108000" />
+      <workItem from="1790672056188" duration="5078000" />
+      <workItem from="1790775054078" duration="2864000" />
+      <workItem from="1790781293223" duration="8924000" />
+      <workItem from="1790959218452" duration="45698000" />
+      <workItem from="1791288453575" duration="757000" />
+      <workItem from="1791369059985" duration="1244000" />
+      <workItem from="1791635376402" duration="543000" />
+    </task>
+    <task id="LOCAL-00001" summary="wip">
+      <option name="closed" value="true" />
+      <created>1790180694037</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1790180694037</updated>
+    </task>
+    <task id="LOCAL-00002" summary="wip: all equations for each layers">
+      <option name="closed" value="true" />
+      <created>1790186101450</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1790186101450</updated>
+    </task>
+    <task id="LOCAL-00003" summary="wip: combine layer equations">
+      <option name="closed" value="true" />
+      <created>1790186757828</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1790186757828</updated>
+    </task>
+    <task id="LOCAL-00004" summary="wip: measure colab export">
+      <option name="closed" value="true" />
+      <created>1790188148518</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1790188148518</updated>
+    </task>
+    <task id="LOCAL-00005" summary="misc: bump deps, cleanup">
+      <option name="closed" value="true" />
+      <created>1790188169421</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1790188169421</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: initial results">
+      <option name="closed" value="true" />
+      <created>1790190950907</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1790190950907</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: report 1">
+      <option name="closed" value="true" />
+      <created>1790190975794</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1790190975794</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: report 2, visuals">
+      <option name="closed" value="true" />
+      <created>1790278861098</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1790278861099</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: report full? + scans">
+      <option name="closed" value="true" />
+      <created>1790284873623</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1790284873623</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: scans">
+      <option name="closed" value="true" />
+      <created>1790284881946</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1790284881946</updated>
+    </task>
+    <task id="LOCAL-00011" summary="cleanup">
+      <option name="closed" value="true" />
+      <created>1790284933341</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1790284933341</updated>
+    </task>
+    <task id="LOCAL-00012" summary="link">
+      <option name="closed" value="true" />
+      <created>1790284958023</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1790284958023</updated>
+    </task>
+    <task id="LOCAL-00013" summary="init">
+      <option name="closed" value="true" />
+      <created>1790666125503</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1790666125503</updated>
+    </task>
+    <task id="LOCAL-00014" summary="presentation">
+      <option name="closed" value="true" />
+      <created>1790672129993</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1790672129993</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat: preliminary runs">
+      <option name="closed" value="true" />
+      <created>1791114319271</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1791114319271</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feat: first seed runs data, colab export">
+      <option name="closed" value="true" />
+      <created>1791122764476</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1791122764476</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat: a bunch of visuals">
+      <option name="closed" value="true" />
+      <created>1791123336021</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1791123336021</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat: more data, scratch report">
+      <option name="closed" value="true" />
+      <created>1791189382456</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1791189382456</updated>
+    </task>
+    <task id="LOCAL-00019" summary="feat: more data, scratch report">
+      <option name="closed" value="true" />
+      <created>1791189386924</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1791189386924</updated>
+    </task>
+    <task id="LOCAL-00020" summary="ref: reorg figures">
+      <option name="closed" value="true" />
+      <created>1791191217230</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1791191217230</updated>
+    </task>
+    <task id="LOCAL-00021" summary="feat: more data">
+      <option name="closed" value="true" />
+      <created>1791192357034</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1791192357034</updated>
+    </task>
+    <task id="LOCAL-00022" summary="feat: report">
+      <option name="closed" value="true" />
+      <created>1791211670937</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1791211670937</updated>
+    </task>
+    <task id="LOCAL-00023" summary="feat: report">
+      <option name="closed" value="true" />
+      <created>1791212983307</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1791212983307</updated>
+    </task>
+    <task id="LOCAL-00024" summary="feat: report">
+      <option name="closed" value="true" />
+      <created>1791213465565</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1791213465565</updated>
+    </task>
+    <task id="LOCAL-00025" summary="feat: report more data">
+      <option name="closed" value="true" />
+      <created>1791289196144</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1791289196144</updated>
+    </task>
+    <task id="LOCAL-00026" summary="feat: last experimental data">
+      <option name="closed" value="true" />
+      <created>1791369495947</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1791369495947</updated>
+    </task>
+    <task id="LOCAL-00027" summary="ref: last export of colab + shareble link">
+      <option name="closed" value="true" />
+      <created>1791369572668</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1791369572668</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="wip" />
+    <MESSAGE value="wip: all equations for each layers" />
+    <MESSAGE value="wip: combine layer equations" />
+    <MESSAGE value="wip: measure colab export" />
+    <MESSAGE value="misc: bump deps, cleanup" />
+    <MESSAGE value="feat: initial results" />
+    <MESSAGE value="feat: report 1" />
+    <MESSAGE value="feat: report 2, visuals" />
+    <MESSAGE value="feat: report full? + scans" />
+    <MESSAGE value="feat: scans" />
+    <MESSAGE value="cleanup" />
+    <MESSAGE value="link" />
+    <MESSAGE value="init" />
+    <MESSAGE value="presentation" />
+    <MESSAGE value="feat: preliminary runs" />
+    <MESSAGE value="feat: first seed runs data, colab export" />
+    <MESSAGE value="feat: a bunch of visuals" />
+    <MESSAGE value="feat: more data, scratch report" />
+    <MESSAGE value="ref: reorg figures" />
+    <MESSAGE value="feat: more data" />
+    <MESSAGE value="feat: report" />
+    <MESSAGE value="feat: report more data" />
+    <MESSAGE value="feat: last experimental data" />
+    <MESSAGE value="ref: last export of colab + shareble link" />
+    <option name="LAST_COMMIT_MESSAGE" value="ref: last export of colab + shareble link" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ENN_samsonov_2026$conv_ai_check.coverage" NAME="conv_ai_check Coverage Results" MODIFIED="1790281095791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp" />
+    <SUITE FILE_PATH="coverage/ENN_samsonov_2026$residual_analysis.coverage" NAME="residual_analysis Coverage Results" MODIFIED="1790279561891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+    <SUITE FILE_PATH="coverage/ENN_samsonov_2026$cnn_ai_example.coverage" NAME="cnn_ai_example Coverage Results" MODIFIED="1790281377686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+    <SUITE FILE_PATH="coverage/ENN_samsonov_2026$analyze.coverage" NAME="analyze Coverage Results" MODIFIED="1791369145535" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ENN_samsonov_2026$plot_results.coverage" NAME="plot_results Coverage Results" MODIFIED="1790279558367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ENN_samsonov_2026$calibrate.coverage" NAME="calibrate Coverage Results" MODIFIED="1790279556133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
